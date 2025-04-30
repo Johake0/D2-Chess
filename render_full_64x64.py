@@ -3,8 +3,8 @@ import os
 import matplotlib.pyplot as plt
 
 # === CONFIG ===
-json_dir = "all_boards_json_final"
-layout_file = "layout_64x64_multi_seed_color_validated.json"
+json_dir = "all_boards_json"
+layout_file = "layout_64x64_multi_seed_color_grouped.json"
 output_image = "puzzle_render_64x64_combined_color.png"
 
 # === SETTINGS ===
