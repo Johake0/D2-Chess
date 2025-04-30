@@ -4,7 +4,7 @@ import json
 os.makedirs("json_outputs", exist_ok=True)
 
 # Define input directory (adjust if needed)
-json_dir = "all_boards_json"
+json_dir = "all_boards_json_final"
 output_file = "json_outputs/edge_profiles.json"
 
 # Output structure: board_id -> { top: [...], bottom: [...], left: [...], right: [...] }

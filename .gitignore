@@ -1,3 +1,7 @@
-all_boards_json/*
+all_boards_json/
 all_boards_json_final/*
+json_outputs/old_json/
+json_outputs/convert_tsv_unverified_to_json.py
 pictures/*
+data/data-old.tsv
+data/data-verified.tsv
