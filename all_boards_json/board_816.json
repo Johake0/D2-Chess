@@ -20,7 +20,7 @@
   {
     "row": 0,
     "col": 3,
-    "piece": "\u2654",
+    "piece": "\u2655",
     "color": "black"
   },
   {
@@ -164,13 +164,13 @@
   {
     "row": 3,
     "col": 3,
-    "piece": "\u265c",
+    "piece": null,
     "color": "lightgray"
   },
   {
     "row": 3,
     "col": 4,
-    "piece": "\u265c",
+    "piece": null,
     "color": "lightgray"
   },
   {
@@ -212,13 +212,13 @@
   {
     "row": 4,
     "col": 3,
-    "piece": "\u265c",
+    "piece": null,
     "color": "lightgray"
   },
   {
     "row": 4,
     "col": 4,
-    "piece": "\u265c",
+    "piece": null,
     "color": "lightgray"
   },
   {

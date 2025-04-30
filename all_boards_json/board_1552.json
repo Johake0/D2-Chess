@@ -1,0 +1,386 @@
+[
+  {
+    "row": 0,
+    "col": 0,
+    "piece": "\u265b",
+    "color": "black"
+  },
+  {
+    "row": 0,
+    "col": 1,
+    "piece": "\u265a",
+    "color": "black"
+  },
+  {
+    "row": 0,
+    "col": 2,
+    "piece": "\u2655",
+    "color": "black"
+  },
+  {
+    "row": 0,
+    "col": 3,
+    "piece": "\u265e",
+    "color": "black"
+  },
+  {
+    "row": 0,
+    "col": 4,
+    "piece": "\u2656",
+    "color": "black"
+  },
+  {
+    "row": 0,
+    "col": 5,
+    "piece": "\u2654",
+    "color": "black"
+  },
+  {
+    "row": 0,
+    "col": 6,
+    "piece": "\u265d",
+    "color": "black"
+  },
+  {
+    "row": 0,
+    "col": 7,
+    "piece": "\u2654",
+    "color": "black"
+  },
+  {
+    "row": 1,
+    "col": 0,
+    "piece": "\u2657",
+    "color": "black"
+  },
+  {
+    "row": 1,
+    "col": 1,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 1,
+    "col": 2,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 1,
+    "col": 3,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 1,
+    "col": 4,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 1,
+    "col": 5,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 1,
+    "col": 6,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 1,
+    "col": 7,
+    "piece": "\u2655",
+    "color": "black"
+  },
+  {
+    "row": 2,
+    "col": 0,
+    "piece": "\u2654",
+    "color": "black"
+  },
+  {
+    "row": 2,
+    "col": 1,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 2,
+    "col": 2,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 2,
+    "col": 3,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 2,
+    "col": 4,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 2,
+    "col": 5,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 2,
+    "col": 6,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 2,
+    "col": 7,
+    "piece": "\u265e",
+    "color": "black"
+  },
+  {
+    "row": 3,
+    "col": 0,
+    "piece": "\u2659",
+    "color": "black"
+  },
+  {
+    "row": 3,
+    "col": 1,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 3,
+    "col": 2,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 3,
+    "col": 3,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 3,
+    "col": 4,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 3,
+    "col": 5,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 3,
+    "col": 6,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 3,
+    "col": 7,
+    "piece": "\u265c",
+    "color": "black"
+  },
+  {
+    "row": 4,
+    "col": 0,
+    "piece": "\u265e",
+    "color": "black"
+  },
+  {
+    "row": 4,
+    "col": 1,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 4,
+    "col": 2,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 4,
+    "col": 3,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 4,
+    "col": 4,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 4,
+    "col": 5,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 4,
+    "col": 6,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 4,
+    "col": 7,
+    "piece": "\u265a",
+    "color": "black"
+  },
+  {
+    "row": 5,
+    "col": 0,
+    "piece": "\u2657",
+    "color": "black"
+  },
+  {
+    "row": 5,
+    "col": 1,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 5,
+    "col": 2,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 5,
+    "col": 3,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 5,
+    "col": 4,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 5,
+    "col": 5,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 5,
+    "col": 6,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 5,
+    "col": 7,
+    "piece": "\u265b",
+    "color": "black"
+  },
+  {
+    "row": 6,
+    "col": 0,
+    "piece": "\u265b",
+    "color": "black"
+  },
+  {
+    "row": 6,
+    "col": 1,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 6,
+    "col": 2,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 6,
+    "col": 3,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 6,
+    "col": 4,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 6,
+    "col": 5,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 6,
+    "col": 6,
+    "piece": null,
+    "color": "darkgray"
+  },
+  {
+    "row": 6,
+    "col": 7,
+    "piece": "\u2658",
+    "color": "black"
+  },
+  {
+    "row": 7,
+    "col": 0,
+    "piece": "\u2659",
+    "color": "black"
+  },
+  {
+    "row": 7,
+    "col": 1,
+    "piece": "\u2658",
+    "color": "black"
+  },
+  {
+    "row": 7,
+    "col": 2,
+    "piece": "\u265d",
+    "color": "black"
+  },
+  {
+    "row": 7,
+    "col": 3,
+    "piece": "\u265a",
+    "color": "black"
+  },
+  {
+    "row": 7,
+    "col": 4,
+    "piece": "\u265a",
+    "color": "black"
+  },
+  {
+    "row": 7,
+    "col": 5,
+    "piece": "\u265e",
+    "color": "black"
+  },
+  {
+    "row": 7,
+    "col": 6,
+    "piece": "\u2657",
+    "color": "black"
+  },
+  {
+    "row": 7,
+    "col": 7,
+    "piece": "\u2654",
+    "color": "black"
+  }
+]

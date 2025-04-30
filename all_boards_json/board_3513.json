@@ -140,7 +140,7 @@
   {
     "row": 2,
     "col": 7,
-    "piece": "\u2654",
+    "piece": "\u2655",
     "color": "black"
   },
   {
@@ -380,7 +380,7 @@
   {
     "row": 7,
     "col": 7,
-    "piece": "\u2657",
+    "piece": "\u2654",
     "color": "black"
   }
 ]

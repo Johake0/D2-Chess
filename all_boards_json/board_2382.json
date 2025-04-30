@@ -164,13 +164,13 @@
   {
     "row": 3,
     "col": 3,
-    "piece": null,
+    "piece": "\u2659",
     "color": "lightgray"
   },
   {
     "row": 3,
     "col": 4,
-    "piece": null,
+    "piece": "\u2659",
     "color": "lightgray"
   },
   {
@@ -212,13 +212,13 @@
   {
     "row": 4,
     "col": 3,
-    "piece": null,
+    "piece": "\u2659",
     "color": "lightgray"
   },
   {
     "row": 4,
     "col": 4,
-    "piece": null,
+    "piece": "\u2659",
     "color": "lightgray"
   },
   {

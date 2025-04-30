@@ -164,13 +164,13 @@
   {
     "row": 3,
     "col": 3,
-    "piece": "\u265c",
+    "piece": null,
     "color": "lightred"
   },
   {
     "row": 3,
     "col": 4,
-    "piece": "\u265c",
+    "piece": null,
     "color": "lightred"
   },
   {
@@ -212,13 +212,13 @@
   {
     "row": 4,
     "col": 3,
-    "piece": "\u265c",
+    "piece": null,
     "color": "lightred"
   },
   {
     "row": 4,
     "col": 4,
-    "piece": "\u265c",
+    "piece": null,
     "color": "lightred"
   },
   {
@@ -380,7 +380,7 @@
   {
     "row": 7,
     "col": 7,
-    "piece": "\u265a",
+    "piece": "\u265b",
     "color": "black"
   }
 ]

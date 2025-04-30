@@ -8,7 +8,7 @@
   {
     "row": 0,
     "col": 1,
-    "piece": "\u265b",
+    "piece": "\u265a",
     "color": "black"
   },
   {
@@ -350,7 +350,7 @@
   {
     "row": 7,
     "col": 2,
-    "piece": "\u2655",
+    "piece": "\u2654",
     "color": "black"
   },
   {

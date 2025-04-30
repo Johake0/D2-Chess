@@ -2,55 +2,55 @@
   {
     "row": 0,
     "col": 0,
-    "piece": "\u2658",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 0,
     "col": 1,
-    "piece": "\u265a",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 0,
     "col": 2,
-    "piece": "\u2655",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 0,
     "col": 3,
-    "piece": "\u2658",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 0,
     "col": 4,
-    "piece": "\u265c",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 0,
     "col": 5,
-    "piece": "\u2654",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 0,
     "col": 6,
-    "piece": "\u265b",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 0,
     "col": 7,
-    "piece": "\u2657",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 1,
     "col": 0,
-    "piece": "\u265d",
+    "piece": null,
     "color": "black"
   },
   {
@@ -92,13 +92,13 @@
   {
     "row": 1,
     "col": 7,
-    "piece": "\u2654",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 2,
     "col": 0,
-    "piece": "\u2654",
+    "piece": null,
     "color": "black"
   },
   {
@@ -140,13 +140,13 @@
   {
     "row": 2,
     "col": 7,
-    "piece": "\u265d",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 3,
     "col": 0,
-    "piece": "\u2659",
+    "piece": null,
     "color": "black"
   },
   {
@@ -164,13 +164,13 @@
   {
     "row": 3,
     "col": 3,
-    "piece": "\u265f",
+    "piece": null,
     "color": "lightred"
   },
   {
     "row": 3,
     "col": 4,
-    "piece": "\u265f",
+    "piece": null,
     "color": "lightred"
   },
   {
@@ -188,13 +188,13 @@
   {
     "row": 3,
     "col": 7,
-    "piece": "\u265e",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 4,
     "col": 0,
-    "piece": "\u265e",
+    "piece": null,
     "color": "black"
   },
   {
@@ -212,13 +212,13 @@
   {
     "row": 4,
     "col": 3,
-    "piece": "\u265f",
+    "piece": null,
     "color": "lightred"
   },
   {
     "row": 4,
     "col": 4,
-    "piece": "\u265f",
+    "piece": null,
     "color": "lightred"
   },
   {
@@ -236,13 +236,13 @@
   {
     "row": 4,
     "col": 7,
-    "piece": "\u2659",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 5,
     "col": 0,
-    "piece": "\u2657",
+    "piece": null,
     "color": "black"
   },
   {
@@ -284,13 +284,13 @@
   {
     "row": 5,
     "col": 7,
-    "piece": "\u265a",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 6,
     "col": 0,
-    "piece": "\u265a",
+    "piece": null,
     "color": "black"
   },
   {
@@ -332,55 +332,55 @@
   {
     "row": 6,
     "col": 7,
-    "piece": "\u2657",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 7,
     "col": 0,
-    "piece": "\u2659",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 7,
     "col": 1,
-    "piece": "\u265d",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 7,
     "col": 2,
-    "piece": "\u2654",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 7,
     "col": 3,
-    "piece": "\u265f",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 7,
     "col": 4,
-    "piece": "\u2658",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 7,
     "col": 5,
-    "piece": "\u2657",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 7,
     "col": 6,
-    "piece": "\u265a",
+    "piece": null,
     "color": "black"
   },
   {
     "row": 7,
     "col": 7,
-    "piece": "\u265e",
+    "piece": null,
     "color": "black"
   }
 ]
