@@ -139,11 +139,6 @@
       z-index: 6;
     }
 
-    .edge-black {
-      background-color: #2a2a2a !important;
-      background-image: radial-gradient(circle at center, rgba(255,255,255,0.12), transparent 60%);
-    }
-
     .white-piece,
     .black-piece {
       font-size: 44px;
@@ -157,212 +152,207 @@
 
     .white-piece {
       color: white;
-      text-shadow:
-        0 0 4px rgba(0, 0, 0, 0.7),
-        0 0 2px rgba(0, 0, 0, 0.6);
+      text-shadow: 0 0 4px rgba(0,0,0,0.7), 0 0 2px rgba(0,0,0,0.6);
     }
 
     .black-piece {
       color: black;
     }
 
-    .color-light {
-      background-color: #b0b0b0 !important;
-    }
-
-    .color-dark {
-      background-color: #555 !important;
-    }
-
-    .color-black {
-      background-color: #2a2a2a !important;
-      background-image: radial-gradient(circle at center, rgba(255,255,255,0.12), transparent 60%);
-    }
-
-    .color-white {
-      background-color: #f0f0f0 !important;
-    }
-
-    .color-darkred {
-      background-color: #8b0000 !important;
-    }
-
-    .color-lightred {
-      background-color: #e06666 !important;
-    }
+    .color-light { background-color: #b0b0b0 !important; }
+    .color-dark { background-color: #555 !important; }
+    .color-black { background-color: #2a2a2a !important; background-image: radial-gradient(circle at center, rgba(255,255,255,0.12), transparent 60%); }
+    .color-white { background-color: #f0f0f0 !important; }
+    .color-darkred { background-color: #8b0000 !important; }
+    .color-lightred { background-color: #e06666 !important; }
   </style>
 </head>
 <body>
-
 <div class="controls">
   <div class="section-label">White Pieces</div>
   <div class="piece-section" id="whitePieces"></div>
-
   <div class="section-label">Black Pieces</div>
   <div class="piece-section" id="blackPieces"></div>
-
   <button onclick="rotateBoard()">🔄 Rotate 90°</button>
   <button onclick="exportBoard()">📸 Export Board</button>
-</div>
+  <button onclick="exportBoardAsJSON()">💾 Export JSON</button>
+  <input type="file" id="jsonInput" accept=".json" style="margin-top:10px;" />
+<button onclick="importBoardFromJSON()">📥 Import JSON</button>
 
+</div>
 <div class="canvas-area" id="canvasArea">
   <div class="board-container">
     <div class="board" id="board"></div>
   </div>
 </div>
-
 <script>
-  const whitePiecesDiv = document.getElementById('whitePieces');
-  const blackPiecesDiv = document.getElementById('blackPieces');
-  const board = document.getElementById('board');
-  const blackPiecesList = ["♟", "♜", "♞", "♝", "♛", "♚"];
-
-  let selectedPiece = "";
-
-  const whitePieces = ["♙", "♖", "♘", "♗", "♕", "♔"];
-  const blackPieces = ["♟", "♜", "♞", "♝", "♛", "♚"];
-
-  function createPieceButton(piece, container) {
-    const btn = document.createElement('div');
-    btn.className = 'piece-button';
-    btn.textContent = piece;
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.piece-button').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      selectedPiece = piece;
-    });
-    container.appendChild(btn);
-  }
-
-  function createColorSelect(square, defaultColor = "white") {
-    const select = document.createElement('select');
-    select.className = 'color-select';
-
-    const colors = [
-      ["light", "Light Grey"],
-      ["dark", "Dark Grey"],
-      ["black", "Black"],
-      ["white", "White"],
-      ["darkred", "Dark Red"],
-      ["lightred", "Light Red"]
-    ];
-
-    colors.forEach(([val, label]) => {
-      const opt = document.createElement('option');
-      opt.value = val;
-      opt.textContent = label;
-      if (val === defaultColor) opt.selected = true;
-      select.appendChild(opt);
-    });
-
-    select.addEventListener('change', (e) => {
-      e.stopPropagation();
-      square.classList.remove("color-light", "color-dark", "color-black", "color-white", "color-darkred", "color-lightred");
-      square.classList.add(`color-${select.value}`);
-    });
-
-    select.addEventListener('click', e => e.stopPropagation());
-
-    return select;
-  }
-
-  whitePieces.forEach(p => createPieceButton(p, whitePiecesDiv));
-  blackPieces.forEach(p => createPieceButton(p, blackPiecesDiv));
-
-  function buildBoard(state = null) {
-    board.innerHTML = '';
-    for (let row = 0; row < 8; row++) {
-      for (let col = 0; col < 8; col++) {
-        const square = document.createElement('div');
-        square.classList.add('square');
-
-        const isEdge = row === 0 || row === 7 || col === 0 || col === 7;
-        if (isEdge) {
-          square.classList.add('edge-black');
-        } else {
-          const saved = state?.[row]?.[col] || {};
-          square.classList.add(saved.colorClass || 'color-white');
-          if (saved.piece) {
-            const pieceDiv = document.createElement('div');
-            pieceDiv.textContent = saved.piece;
-            pieceDiv.className = blackPiecesList.includes(saved.piece) ? 'black-piece' : 'white-piece';
-            square.appendChild(pieceDiv);
-          }
-          const select = createColorSelect(square, saved.colorClass?.replace("color-", "") || "white");
-          square.appendChild(select);
-        }
-
-        square.addEventListener('click', () => {
-          if (selectedPiece) {
-            const existingClass = Array.from(square.classList).find(c => c.startsWith("color-"));
-            square.innerHTML = '';
-            const pieceDiv = document.createElement('div');
-            pieceDiv.textContent = selectedPiece;
-            pieceDiv.className = blackPiecesList.includes(selectedPiece) ? 'black-piece' : 'white-piece';
-            square.appendChild(pieceDiv);
-            if (!isEdge) {
-              square.classList.add(existingClass || "color-white");
-              square.appendChild(createColorSelect(square, existingClass?.replace("color-", "") || "white"));
-            }
-          }
-        });
-
-        square.addEventListener('contextmenu', e => {
-          e.preventDefault();
+const whitePiecesDiv = document.getElementById('whitePieces');
+const blackPiecesDiv = document.getElementById('blackPieces');
+const board = document.getElementById('board');
+const blackPiecesList = ["♟", "♜", "♞", "♝", "♛", "♚"];
+let selectedPiece = "";
+const whitePieces = ["♙", "♖", "♘", "♗", "♕", "♔"];
+const blackPieces = ["♟", "♜", "♞", "♝", "♛", "♚"];
+whitePieces.forEach(p => createPieceButton(p, whitePiecesDiv));
+blackPieces.forEach(p => createPieceButton(p, blackPiecesDiv));
+function createPieceButton(piece, container) {
+  const btn = document.createElement('div');
+  btn.className = 'piece-button';
+  btn.textContent = piece;
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.piece-button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    selectedPiece = piece;
+  });
+  container.appendChild(btn);
+}
+function createColorSelect(square, defaultColor = "white") {
+  const select = document.createElement('select');
+  select.className = 'color-select';
+  const colors = [["light", "Light Grey"],["dark", "Dark Grey"],["black", "Black"],["white", "White"],["darkred", "Dark Red"],["lightred", "Light Red"]];
+  colors.forEach(([val, label]) => {
+    const opt = document.createElement('option');
+    opt.value = val;
+    opt.textContent = label;
+    if (val === defaultColor) opt.selected = true;
+    select.appendChild(opt);
+  });
+  select.addEventListener('change', (e) => {
+    e.stopPropagation();
+    square.classList.remove("color-light", "color-dark", "color-black", "color-white", "color-darkred", "color-lightred");
+    square.classList.add(`color-${select.value}`);
+  });
+  select.addEventListener('click', e => e.stopPropagation());
+  return select;
+}
+function buildBoard(state = null) {
+  board.innerHTML = '';
+  for (let row = 0; row < 8; row++) {
+    for (let col = 0; col < 8; col++) {
+      const square = document.createElement('div');
+      square.classList.add('square');
+      const isEdge = row === 0 || row === 7 || col === 0 || col === 7;
+      const saved = state?.[row]?.[col] || {};
+      square.classList.add(saved.colorClass || (isEdge ? 'color-black' : 'color-white'));
+      if (saved.piece) {
+        const pieceDiv = document.createElement('div');
+        pieceDiv.textContent = saved.piece;
+        pieceDiv.className = blackPiecesList.includes(saved.piece) ? 'black-piece' : 'white-piece';
+        square.appendChild(pieceDiv);
+      }
+      const select = createColorSelect(square, saved.colorClass?.replace("color-", "") || (isEdge ? "black" : "white"));
+      square.appendChild(select);
+      square.addEventListener('click', () => {
+        if (selectedPiece) {
           const existingClass = Array.from(square.classList).find(c => c.startsWith("color-"));
           square.innerHTML = '';
-          if (!isEdge) {
-            square.classList.add(existingClass || "color-white");
-            square.appendChild(createColorSelect(square, existingClass?.replace("color-", "") || "white"));
-          }
-        });
-
-        board.appendChild(square);
-      }
+          const pieceDiv = document.createElement('div');
+          pieceDiv.textContent = selectedPiece;
+          pieceDiv.className = blackPiecesList.includes(selectedPiece) ? 'black-piece' : 'white-piece';
+          square.appendChild(pieceDiv);
+          square.classList.add(existingClass || "color-white");
+          square.appendChild(createColorSelect(square, existingClass?.replace("color-", "") || "white"));
+        }
+      });
+      square.addEventListener('contextmenu', e => {
+        e.preventDefault();
+        const existingClass = Array.from(square.classList).find(c => c.startsWith("color-"));
+        square.innerHTML = '';
+        square.classList.add(existingClass || "color-white");
+        square.appendChild(createColorSelect(square, existingClass?.replace("color-", "") || "white"));
+      });
+      board.appendChild(square);
     }
   }
-
-  function rotateBoard() {
-    const squares = board.querySelectorAll('.square');
-    const state = Array.from({ length: 8 }, () => Array(8).fill(null));
-    squares.forEach((square, i) => {
-      const row = Math.floor(i / 8), col = i % 8;
-      const pieceDiv = square.querySelector('.white-piece, .black-piece');
-      const piece = pieceDiv?.textContent || null;
-      const colorClass = Array.from(square.classList).find(c => c.startsWith("color-"));
-      state[row][col] = { piece, colorClass };
+}
+function rotateBoard() {
+  const squares = board.querySelectorAll('.square');
+  const state = Array.from({ length: 8 }, () => Array(8).fill(null));
+  squares.forEach((square, i) => {
+    const row = Math.floor(i / 8), col = i % 8;
+    const pieceDiv = square.querySelector('.white-piece, .black-piece');
+    const piece = pieceDiv?.textContent || null;
+    const colorClass = Array.from(square.classList).find(c => c.startsWith("color-"));
+    state[row][col] = { piece, colorClass };
+  });
+  const rotated = Array.from({ length: 8 }, () => Array(8).fill(null));
+  for (let r = 0; r < 8; r++)
+    for (let c = 0; c < 8; c++)
+      rotated[c][7 - r] = state[r][c];
+  buildBoard(rotated);
+}
+function exportBoard() {
+  const dropdowns = document.querySelectorAll('.color-select');
+  const removed = [];
+  dropdowns.forEach(select => {
+    const parent = select.parentNode;
+    removed.push({ parent, select });
+    parent.removeChild(select);
+  });
+  setTimeout(() => {
+    html2canvas(document.getElementById('board')).then(canvas => {
+      const a = document.createElement('a');
+      a.href = canvas.toDataURL();
+      a.download = "chessboard.png";
+      a.click();
+      removed.forEach(({ parent, select }) => parent.appendChild(select));
     });
+  }, 100);
+}
 
-    const rotated = Array.from({ length: 8 }, () => Array(8).fill(null));
-    for (let r = 0; r < 8; r++)
-      for (let c = 0; c < 8; c++)
-        rotated[c][7 - r] = state[r][c];
+function exportBoardAsJSON() {
+  const squares = board.querySelectorAll('.square');
+  const boardData = [];
 
-    buildBoard(rotated);
-  }
+  squares.forEach((square, i) => {
+    const row = Math.floor(i / 8);
+    const col = i % 8;
+    const pieceDiv = square.querySelector('.white-piece, .black-piece');
+    const piece = pieceDiv ? pieceDiv.textContent : null;
+    const colorClass = Array.from(square.classList).find(c => c.startsWith("color-"));
+    const color = colorClass ? colorClass.replace("color-", "") : null;
 
-  function exportBoard() {
-    const dropdowns = document.querySelectorAll('.color-select');
-    const removed = [];
-    dropdowns.forEach(select => {
-      const parent = select.parentNode;
-      removed.push({ parent, select });
-      parent.removeChild(select);
-    });
+    boardData.push({ row, col, piece, color });
+  });
 
-    setTimeout(() => {
-      html2canvas(document.getElementById('board')).then(canvas => {
-        const a = document.createElement('a');
-        a.href = canvas.toDataURL();
-        a.download = "chessboard.png";
-        a.click();
-        removed.forEach(({ parent, select }) => parent.appendChild(select));
+  const json = JSON.stringify(boardData, null, 2);
+  const blob = new Blob([json], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "board-data.json";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}
+
+function importBoardFromJSON() {
+  const fileInput = document.getElementById('jsonInput');
+  const file = fileInput.files[0];
+  if (!file) return alert("Please select a JSON file.");
+
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    try {
+      const data = JSON.parse(e.target.result);
+      const state = Array.from({ length: 8 }, () => Array(8).fill(null));
+      data.forEach(({ row, col, piece, color }) => {
+        state[row][col] = { piece, colorClass: color ? `color-${color}` : null };
       });
-    }, 100);
-  }
+      buildBoard(state);
+    } catch (err) {
+      alert("Invalid JSON file.");
+      console.error(err);
+    }
+  };
 
-  buildBoard();
+  reader.readAsText(file);
+}
+
+
+buildBoard();
 </script>
-
 </body>
 </html>
