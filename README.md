@@ -1,4 +1,4 @@
-# D2-Chess
+# Destiny 2 - Chess
 
 - Web App: https://alvii-1.github.io/D2-Chess/
 
