@@ -16,7 +16,7 @@ To run this:
 
 5) run `python generate_adjacency_map.py` in the terminal. This will generate an adjacency map which shows which boards share a border based on border and color.
 
-6) run `python build_layout_64x64_multi_seed_color_grouped.py` in the terminal. This will generate a json file that will be read by the board renderer which will plot down the boards and their adjacent boards.
+6) run `python make_layout_64x64_multi_seed_color_grouped.py` in the terminal. This will generate a json file that will be read by the board renderer which will plot down the boards and their adjacent boards.
 
 7) run `python render_full_64x64.py` in the terminal. This will render the board as a png image using matplotlib, and will output the picture of the board in /pictures.
 
