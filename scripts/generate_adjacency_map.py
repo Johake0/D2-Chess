@@ -1,11 +1,8 @@
-import os
 import json
 
-project_root = os.path.dirname(os.path.dirname(__file__))
-
 # === CONFIG ===
-edge_profiles_file = os.path.join(project_root, "json_outputs/edge_profiles.json")
-output_file = os.path.join(project_root, "json_outputs/board_adjacency.json")
+edge_profiles_file = "json_outputs/edge_profiles.json"
+output_file = "json_outputs/board_adjacency.json"
 
 # === LOAD EDGE PROFILES ===
 with open(edge_profiles_file, "r", encoding="utf-8") as f:
