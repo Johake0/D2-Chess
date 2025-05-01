@@ -26,19 +26,24 @@ DEFAULT_COLOR = "orange"
 def normalize_color_name(raw):
     return raw.strip().lower().replace(" ", "")
 
-with open("data-verified.tsv", "r", encoding="utf-8") as f:
-    reader = csv.DictReader(f, delimiter='\t')
-    for row in reader:
-        board_id = row["frequency"]
-        piece_string = row["board"]
-        interior_color_raw = row["fill"]
-        has_qr = row["hasQR"]
-
-        # Skip if QR value is 1
-        if has_qr == "1":
+with open("data.tsv", "r", encoding="utf-8") as f:
+    for line in f:
+        # Skip empty lines
+        if not line.strip():
             continue
 
+        # Split the line into fields
+        fields = line.strip().split('\t')
+
+        # Ensure there are at least 4 fields
+        if len(fields) < 4:
+            print(f"Warning: Skipping malformed line: {line.strip()}")
+            continue
+
+        # Extract fields
+        _, board_id, piece_string, interior_color_raw = fields[0], fields[1], fields[2], fields[-1]
         interior_color = normalize_color_name(interior_color_raw)
+
         if interior_color not in COLOR_PALETTE:
             print(f"Warning: Unknown interior color '{interior_color_raw}'. Defaulting to {DEFAULT_COLOR}.")
             interior_color = DEFAULT_COLOR
@@ -66,7 +71,7 @@ with open("data-verified.tsv", "r", encoding="utf-8") as f:
                 "color": square_color
             })
 
-        out_dir = "all_boards_json"
+        out_dir = "all_boards_json_final"
         os.makedirs(out_dir, exist_ok=True)
         path = os.path.join(out_dir, f"board_{board_id}.json")
         with open(path, "w", encoding="utf-8") as f_out:
