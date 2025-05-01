@@ -7,7 +7,7 @@ project_root = os.path.dirname(os.path.dirname(__file__))
 # === CONFIG ===
 json_dir = os.path.join(project_root, "all_boards_json")
 layout_file = os.path.join(project_root, "json_outputs/layout_64x64_multi_seed_color_grouped.json")
-output_image = os.path.join(project_root, "pictures/ChessGrid.png")
+output_image = os.path.join(project_root, "ChessGrid.png")
 
 # === SETTINGS ===
 grid_size = 64
