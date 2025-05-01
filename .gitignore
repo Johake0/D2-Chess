@@ -1,14 +1,3 @@
 all_boards_json/*
-!all_boards_json/
-all_boards_json_final/
-
-json_outputs/*
-!json_outputs/
-
-
+all_boards_json_final/*
 pictures/*
-!pictures/
-
-
-data/data-old.tsv
-data/data-verified.tsv
