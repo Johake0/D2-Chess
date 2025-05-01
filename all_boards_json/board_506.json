@@ -92,7 +92,7 @@
   {
     "row": 1,
     "col": 7,
-    "piece": "\u265a",
+    "piece": "\u265b",
     "color": "black"
   },
   {
@@ -194,7 +194,7 @@
   {
     "row": 4,
     "col": 0,
-    "piece": "\u2654",
+    "piece": "\u2659",
     "color": "black"
   },
   {

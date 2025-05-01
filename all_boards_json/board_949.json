@@ -164,13 +164,13 @@
   {
     "row": 3,
     "col": 3,
-    "piece": null,
+    "piece": "\u265e",
     "color": "darkred"
   },
   {
     "row": 3,
     "col": 4,
-    "piece": null,
+    "piece": "\u265e",
     "color": "darkred"
   },
   {
@@ -212,13 +212,13 @@
   {
     "row": 4,
     "col": 3,
-    "piece": null,
+    "piece": "\u265e",
     "color": "darkred"
   },
   {
     "row": 4,
     "col": 4,
-    "piece": null,
+    "piece": "\u265e",
     "color": "darkred"
   },
   {

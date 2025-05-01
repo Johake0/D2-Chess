@@ -2,7 +2,7 @@
   {
     "row": 0,
     "col": 0,
-    "piece": "\u265b",
+    "piece": "\u265a",
     "color": "black"
   },
   {
@@ -32,7 +32,7 @@
   {
     "row": 0,
     "col": 5,
-    "piece": "\u2654",
+    "piece": "\u2655",
     "color": "black"
   },
   {
@@ -242,7 +242,7 @@
   {
     "row": 5,
     "col": 0,
-    "piece": "\u2654",
+    "piece": "\u2655",
     "color": "black"
   },
   {
