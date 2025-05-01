@@ -6,7 +6,7 @@ Forked from https://github.com/Alvii-1/D2-Chess to add mapping, adjacency relati
 
 
 To run this:
-1) Put the data.tsv file that you can get from https://tjl.co/queens-gambit-arg/ in the data folder.
+1) Create a data folder then put the data.tsv file that you can get from https://tjl.co/queens-gambit-arg/ into said data folder.
 
 2) Go to the terminal and cd into the scripts folder.
 
