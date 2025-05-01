@@ -2,12 +2,12 @@ import json
 import os
 import matplotlib.pyplot as plt
 
-os.makedirs("pictures", exist_ok=True)
+project_root = os.path.dirname(os.path.dirname(__file__))
 
 # === CONFIG ===
-json_dir = "all_boards_json"
-layout_file = "json_outputs/layout_64x64_multi_seed_color_grouped.json"
-output_image = "pictures/puzzle_render_64x64_combined_color.png"
+json_dir = os.path.join(project_root, "all_boards_json")
+layout_file = os.path.join(project_root, "json_outputs/layout_64x64_multi_seed_color_grouped.json")
+output_image = os.path.join(project_root, "pictures/ChessGrid.png")
 
 # === SETTINGS ===
 grid_size = 64

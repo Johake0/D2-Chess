@@ -1,11 +1,15 @@
-
+import os
 import json
 from collections import deque
 
+project_root = os.path.dirname(os.path.dirname(__file__))
+
 # === CONFIG ===
-adjacency_file = "json_outputs/board_adjacency.json"
-color_group_file = "board_color_groups.json"
-output_file = "json_outputs/layout_64x64_multi_seed_color_grouped.json"
+adjacency_file = os.path.join(project_root, "json_outputs/board_adjacency.json")
+color_group_file = os.path.join(project_root, "board_color_groups.json")
+output_file = os.path.join(project_root, "json_outputs/layout_64x64_multi_seed_color_grouped.json")
+
+
 GRID_SIZE = 64
 
 SEEDS = {

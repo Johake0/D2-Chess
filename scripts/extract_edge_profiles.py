@@ -1,11 +1,11 @@
 import os
 import json
 
-os.makedirs("json_outputs", exist_ok=True)
+project_root = os.path.dirname(os.path.dirname(__file__))
 
 # Define input directory (adjust if needed)
-json_dir = "all_boards_json_final"
-output_file = "json_outputs/edge_profiles.json"
+json_dir = os.path.join(project_root, "all_boards_json")
+output_file = os.path.join(project_root, "json_outputs/edge_profiles.json")
 
 # Output structure: board_id -> { top: [...], bottom: [...], left: [...], right: [...] }
 edge_profiles = {}
