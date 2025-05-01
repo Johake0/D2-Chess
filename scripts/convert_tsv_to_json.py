@@ -2,6 +2,11 @@ import csv
 import json
 import os
 
+project_root = os.path.dirname(os.path.dirname(__file__))
+
+data_path = os.path.join(project_root, "data", "data.tsv")
+
+
 piece_map = {
     "K": {"white": "♔", "black": "♚"},
     "Q": {"white": "♕", "black": "♛"},
@@ -26,7 +31,7 @@ DEFAULT_COLOR = "orange"
 def normalize_color_name(raw):
     return raw.strip().lower().replace(" ", "")
 
-with open("data/data-verified.tsv", "r", encoding="utf-8") as f:
+with open(data_path, "r", encoding="utf-8") as f:
     reader = csv.DictReader(f, delimiter='\t')
     for row in reader:
         board_id = row["frequency"]
@@ -66,7 +71,7 @@ with open("data/data-verified.tsv", "r", encoding="utf-8") as f:
                 "color": square_color
             })
 
-        out_dir = "all_boards_json_final"
+        out_dir = os.path.join(project_root, "all_boards_json")
         os.makedirs(out_dir, exist_ok=True)
         path = os.path.join(out_dir, f"board_{board_id}.json")
         with open(path, "w", encoding="utf-8") as f_out:
