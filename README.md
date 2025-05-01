@@ -1,8 +1,12 @@
-# D2-Chess
+# Destiny 2 - Chess
+
+- Web App: https://alvii-1.github.io/D2-Chess/
+
+Thank you to Johake0 for making it JSON compatible!
 
 Simple chess app reflecting the mechanics of the live event going on in Destiny 2 as of April 30th 2025
 
-Forked from https://github.com/Alvii-1/D2-Chess to add mapping, adjacency relation, and plotting scripts. 
+Johake0 forked from `main` to add mapping, adjacency relation, and plotting scripts. 
 
 
 To run this:
@@ -23,3 +27,4 @@ To run this:
 8) run `python render_full_64x64.py` in the terminal. This will render the board as a png image using matplotlib, and will output the picture of the board in /pictures.
 
 You can use the original app by loading the index.html file in your browser or by visiting the Web App: https://alvii-1.github.io/D2-Chess/
+
