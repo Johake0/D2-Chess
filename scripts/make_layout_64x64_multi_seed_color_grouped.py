@@ -24,7 +24,6 @@ COLOR_GROUPS = {
     "lightred": "red", "darkred": "red"
 }
 
-<<<<<<< HEAD
 # Top left is (0,0), and color is gray
 # In an 8 by 8 board, if gray is 0 and red is 1, (row + col) % 2 = color
 # Integer divide each direction by 8 to get the level 2 board address of a square
@@ -37,8 +36,6 @@ def l2_color_group(r,c):
     return "gray"
 
 
-=======
->>>>>>> 697559f269d256e39c9e49dd1d6d699c4c0f4c67
 # === LOAD FILES ===
 with open(adjacency_file, "r", encoding="utf-8") as f:
     adjacency = json.load(f)
