@@ -1,0 +1,10 @@
+all_boards_json_final
+
+json_outputs/*
+!json_outputs/
+
+pictures/*
+!pictures
+
+data/*
+!data/
