@@ -39,6 +39,13 @@ with open(data_path, "r", encoding="utf-8") as f:
         interior_color_raw = row["fill"]
         has_qr = row["hasQR"]
 
+<<<<<<< HEAD
+=======
+        # Skip if QR value is 1
+        if has_qr == "1":
+            continue
+
+>>>>>>> 697559f269d256e39c9e49dd1d6d699c4c0f4c67
         interior_color = normalize_color_name(interior_color_raw)
         if interior_color not in COLOR_PALETTE:
             print(f"Warning: Unknown interior color '{interior_color_raw}'. Defaulting to {DEFAULT_COLOR}.")
@@ -67,6 +74,7 @@ with open(data_path, "r", encoding="utf-8") as f:
                 "color": square_color
             })
 
+<<<<<<< HEAD
         # Decide where to save the JSON
         if has_qr == "1":
             out_dir = os.path.join(project_root, "all_qr_boards")
@@ -77,3 +85,10 @@ with open(data_path, "r", encoding="utf-8") as f:
         path = os.path.join(out_dir, f"board_{board_id}.json")
         with open(path, "w", encoding="utf-8") as f_out:
             json.dump(board, f_out, indent=2)
+=======
+        out_dir = os.path.join(project_root, "all_boards_json")
+        os.makedirs(out_dir, exist_ok=True)
+        path = os.path.join(out_dir, f"board_{board_id}.json")
+        with open(path, "w", encoding="utf-8") as f_out:
+            json.dump(board, f_out, indent=2)
+>>>>>>> 697559f269d256e39c9e49dd1d6d699c4c0f4c67

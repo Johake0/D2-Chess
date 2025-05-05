@@ -24,6 +24,7 @@ COLOR_GROUPS = {
     "lightred": "red", "darkred": "red"
 }
 
+<<<<<<< HEAD
 # Top left is (0,0), and color is gray
 # In an 8 by 8 board, if gray is 0 and red is 1, (row + col) % 2 = color
 # Integer divide each direction by 8 to get the level 2 board address of a square
@@ -36,6 +37,8 @@ def l2_color_group(r,c):
     return "gray"
 
 
+=======
+>>>>>>> 697559f269d256e39c9e49dd1d6d699c4c0f4c67
 # === LOAD FILES ===
 with open(adjacency_file, "r", encoding="utf-8") as f:
     adjacency = json.load(f)
@@ -69,15 +72,21 @@ def bfs_expand(seed_row, seed_col, seed_id):
                 continue
             if layout[nr][nc] != -1:
                 continue
+<<<<<<< HEAD
             current_group = l2_color_group(nr,nc)
 
             candidates = adjacency.get(board_id, {}).get(dir_name, [])
             same_group_candidates_count = 0
+=======
+
+            candidates = adjacency.get(board_id, {}).get(dir_name, [])
+>>>>>>> 697559f269d256e39c9e49dd1d6d699c4c0f4c67
             for candidate_id in candidates:
                 if candidate_id in used:
                     continue
                 candidate_group_raw = color_groups.get(str(candidate_id), "unknown")
                 candidate_group = COLOR_GROUPS.get(candidate_group_raw, candidate_group_raw)
+<<<<<<< HEAD
                 # TODO: make group match current level 2 board, not just seed group
                 # if candidate_group != seed_group:
                 if candidate_group != current_group:
@@ -90,6 +99,13 @@ def bfs_expand(seed_row, seed_col, seed_id):
                 if same_group_candidates_count > 1:
                     print(str(same_group_candidates_count))
                     print(str(candidates))
+=======
+                if candidate_group != seed_group:
+                    continue
+                layout[nr][nc] = candidate_id
+                used.add(candidate_id)
+                queue.append((nr, nc, candidate_id))
+>>>>>>> 697559f269d256e39c9e49dd1d6d699c4c0f4c67
                 break
 
 # === EXPAND FROM EACH SEED ===
